@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91B1D282997EE4600A74DF9 /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B1D272997EE4600A74DF9 /* FactTableViewCell.swift */; };
+		A91B1D2F2997F0BC00A74DF9 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91B1D2D2997F0B500A74DF9 /* shared.xcframework */; };
+		A91B1D302997F0BC00A74DF9 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A91B1D2D2997F0B500A74DF9 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A92F1EE82993A6E90051B915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F1EE72993A6E90051B915 /* AppDelegate.swift */; };
 		A92F1EEA2993A6E90051B915 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F1EE92993A6E90051B915 /* SceneDelegate.swift */; };
-		A92F1EEC2993A6E90051B915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F1EEB2993A6E90051B915 /* ViewController.swift */; };
+		A92F1EEC2993A6E90051B915 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F1EEB2993A6E90051B915 /* FactsViewController.swift */; };
 		A92F1EEF2993A6E90051B915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92F1EED2993A6E90051B915 /* Main.storyboard */; };
 		A92F1EF12993A6EA0051B915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92F1EF02993A6EA0051B915 /* Assets.xcassets */; };
 		A92F1EF42993A6EA0051B915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92F1EF22993A6EA0051B915 /* LaunchScreen.storyboard */; };
@@ -35,11 +38,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A91B1D312997F0BC00A74DF9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A91B1D302997F0BC00A74DF9 /* shared.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A91B1D272997EE4600A74DF9 /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
+		A91B1D2D2997F0B500A74DF9 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared.xcframework; sourceTree = "<group>"; };
 		A92F1EE42993A6E90051B915 /* kmm-demo-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kmm-demo-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92F1EE72993A6E90051B915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A92F1EE92993A6E90051B915 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A92F1EEB2993A6E90051B915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A92F1EEB2993A6E90051B915 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		A92F1EEE2993A6E90051B915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A92F1EF02993A6EA0051B915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A92F1EF32993A6EA0051B915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91B1D2F2997F0BC00A74DF9 /* shared.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +96,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91B1D2C2997F0A500A74DF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A91B1D2D2997F0B500A74DF9 /* shared.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		A92F1EDB2993A6E90051B915 = {
 			isa = PBXGroup;
 			children = (
+				A91B1D2C2997F0A500A74DF9 /* Frameworks */,
 				A92F1EE62993A6E90051B915 /* kmm-demo-ios */,
 				A92F1EFD2993A6EA0051B915 /* kmm-demo-iosTests */,
 				A92F1F072993A6EA0051B915 /* kmm-demo-iosUITests */,
@@ -101,11 +130,12 @@
 			children = (
 				A92F1EE72993A6E90051B915 /* AppDelegate.swift */,
 				A92F1EE92993A6E90051B915 /* SceneDelegate.swift */,
-				A92F1EEB2993A6E90051B915 /* ViewController.swift */,
+				A92F1EEB2993A6E90051B915 /* FactsViewController.swift */,
 				A92F1EED2993A6E90051B915 /* Main.storyboard */,
 				A92F1EF02993A6EA0051B915 /* Assets.xcassets */,
 				A92F1EF22993A6EA0051B915 /* LaunchScreen.storyboard */,
 				A92F1EF52993A6EA0051B915 /* Info.plist */,
+				A91B1D272997EE4600A74DF9 /* FactTableViewCell.swift */,
 			);
 			path = "kmm-demo-ios";
 			sourceTree = "<group>";
@@ -137,6 +167,7 @@
 				A92F1EE02993A6E90051B915 /* Sources */,
 				A92F1EE12993A6E90051B915 /* Frameworks */,
 				A92F1EE22993A6E90051B915 /* Resources */,
+				A91B1D312997F0BC00A74DF9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,9 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A92F1EEC2993A6E90051B915 /* ViewController.swift in Sources */,
+				A92F1EEC2993A6E90051B915 /* FactsViewController.swift in Sources */,
 				A92F1EE82993A6E90051B915 /* AppDelegate.swift in Sources */,
 				A92F1EEA2993A6E90051B915 /* SceneDelegate.swift in Sources */,
+				A91B1D282997EE4600A74DF9 /* FactTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
