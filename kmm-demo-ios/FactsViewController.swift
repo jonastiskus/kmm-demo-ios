@@ -12,15 +12,15 @@ class FactsViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     
-    private let viewModel = FactsViewModel()
+    var viewModel: FactsViewModel!
+    
     private var data: [Fact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = FactsViewModel()
         setupView()
         setupObservers()
-        
-        viewModel.fetchFacts()
     }
     
     private func setupObservers() {
@@ -47,7 +47,6 @@ class FactsViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "factCell", for: indexPath) as! FactTableViewCell
         
         cell.label.text = data[indexPath.row].fact
-        
         
         return cell
     }

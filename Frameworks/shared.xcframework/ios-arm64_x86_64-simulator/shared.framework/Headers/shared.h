@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedShared, SharedEnvironment, SharedConfig, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinArray<T>, SharedFact, SharedBaseViewModelCompanion, SharedBaseViewModel, SharedFactsViewModelFactsUiState, SharedCommonFlow<T>, SharedKotlinThrowable, SharedNetworkResult<__covariant T>, SharedNetworkResultError, SharedKotlinNothing, SharedNetworkResultLoading, SharedNetworkResultSuccess<T>, SharedFactDtoStatusDto, SharedFactDtoCompanion, SharedFactDto, SharedFactDtoStatusDtoCompanion, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind;
+@class SharedShared, SharedEnvironment, SharedConfig, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinArray<T>, SharedFact, SharedBaseViewModelCompanion, SharedBaseViewModel, SharedFactsViewModelFactsUiState, SharedCommonFlow<T>, SharedKotlinThrowable, SharedNetworkResult<__covariant T>, SharedNetworkResultError, SharedKotlinNothing, SharedNetworkResultLoading, SharedNetworkResultSuccess<T>, SharedFactDtoStatusDto, SharedFactDtoCompanion, SharedFactDto, SharedFactDtoStatusDtoCompanion, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedKodein_diDITrigger, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind, SharedKodein_diDIKey<__contravariant C, __contravariant A, __covariant T>, SharedKotlinUnit, SharedKodein_diDIDefinition<C, A, T>, SharedKotlinTriple<__covariant A, __covariant B, __covariant C>, SharedKodein_diSearchSpecs, SharedKodein_diDIDefining<C, A, T>, SharedKodein_diScopeRegistry, SharedKodein_diReference<__covariant T>;
 
-@protocol SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreFlow, SharedKtor_ioCloseable, SharedPlatform, SharedKotlinComparable, SharedKotlinx_coroutines_coreCoroutineScope, SharedCloseable, SharedKotlinCoroutineContext, SharedKotlinx_serialization_coreKSerializer, SharedFactsRepository, SharedCatsApi, SharedKotlinIterator, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
+@protocol SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinx_coroutines_coreFlow, SharedKtor_ioCloseable, SharedPlatform, SharedKotlinComparable, SharedKotlinx_coroutines_coreCoroutineScope, SharedCloseable, SharedKotlinCoroutineContext, SharedKotlinx_serialization_coreKSerializer, SharedFactsRepository, SharedCatsApi, SharedKodein_diDI, SharedKotlinIterator, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKodein_diDIContainer, SharedKodein_diDIContext, SharedKodein_diDIAware, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKodein_diDITree, SharedKaveritTypeToken, SharedKotlinLazy, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKotlinKClass, SharedKodein_diContextTranslator, SharedKodein_diExternalSource, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKodein_diDIBinding, SharedKodein_diDirectDI, SharedKodein_diBindingDI, SharedKodein_diDIBindingCopier, SharedKodein_diScope, SharedKodein_diBinding, SharedKodein_diDirectDIAware, SharedKodein_diDirectDIBase, SharedKodein_diWithContext, SharedKodein_diDIContainerBuilder, SharedKodein_diScopeCloseable;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -307,7 +307,7 @@ __attribute__((swift_name("FactsViewModel")))
 @interface SharedFactsViewModel : SharedBaseViewModel
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (void)fetchFacts __attribute__((swift_name("fetchFacts()")));
+- (void)reload __attribute__((swift_name("reload()")));
 @property (readonly) SharedCommonFlow<SharedFactsViewModelFactsUiState *> *state __attribute__((swift_name("state")));
 @end
 
@@ -472,6 +472,12 @@ __attribute__((swift_name("FlowUtilsKt")))
 + (SharedCommonFlow<id> *)asCommonFlow:(id<SharedKotlinx_coroutines_coreFlow>)receiver __attribute__((swift_name("asCommonFlow(_:)")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DiKt")))
+@interface SharedDiKt : SharedBase
+@property (class, readonly) id<SharedKodein_diDI> di __attribute__((swift_name("di")));
+@end
+
 __attribute__((swift_name("KotlinThrowable")))
 @interface SharedKotlinThrowable : SharedBase
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
@@ -602,6 +608,20 @@ __attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
 __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @protocol SharedKotlinx_serialization_coreKSerializer <SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDeserializationStrategy>
 @required
+@end
+
+__attribute__((swift_name("Kodein_diDIAware")))
+@protocol SharedKodein_diDIAware
+@required
+@property (readonly) id<SharedKodein_diDI> di __attribute__((swift_name("di")));
+@property (readonly) id<SharedKodein_diDIContext> diContext __attribute__((swift_name("diContext")));
+@property (readonly) SharedKodein_diDITrigger * _Nullable diTrigger __attribute__((swift_name("diTrigger")));
+@end
+
+__attribute__((swift_name("Kodein_diDI")))
+@protocol SharedKodein_diDI <SharedKodein_diDIAware>
+@required
+@property (readonly) id<SharedKodein_diDIContainer> container __attribute__((swift_name("container")));
 @end
 
 __attribute__((swift_name("KotlinIterator")))
@@ -763,6 +783,34 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
+__attribute__((swift_name("Kodein_diDIContainer")))
+@protocol SharedKodein_diDIContainer
+@required
+- (NSArray<id (^)(id _Nullable)> *)allFactoriesKey:(SharedKodein_diDIKey<id, id, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("allFactories(key:context:overrideLevel:)")));
+- (NSArray<id (^)(void)> *)allProvidersKey:(SharedKodein_diDIKey<id, SharedKotlinUnit *, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("allProviders(key:context:overrideLevel:)")));
+- (id (^)(id _Nullable))factoryKey:(SharedKodein_diDIKey<id, id, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("factory(key:context:overrideLevel:)")));
+- (id (^ _Nullable)(id _Nullable))factoryOrNullKey:(SharedKodein_diDIKey<id, id, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("factoryOrNull(key:context:overrideLevel:)")));
+- (id (^)(void))providerKey:(SharedKodein_diDIKey<id, SharedKotlinUnit *, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("provider(key:context:overrideLevel:)")));
+- (id (^ _Nullable)(void))providerOrNullKey:(SharedKodein_diDIKey<id, SharedKotlinUnit *, id> *)key context:(id)context overrideLevel:(int32_t)overrideLevel __attribute__((swift_name("providerOrNull(key:context:overrideLevel:)")));
+@property (readonly) id<SharedKodein_diDITree> tree __attribute__((swift_name("tree")));
+@end
+
+__attribute__((swift_name("Kodein_diDIContext")))
+@protocol SharedKodein_diDIContext
+@required
+@property (readonly) id<SharedKaveritTypeToken> type __attribute__((swift_name("type")));
+@property (readonly) id value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kodein_diDITrigger")))
+@interface SharedKodein_diDITrigger : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)trigger __attribute__((swift_name("trigger()")));
+@property (readonly) NSMutableArray<id<SharedKotlinLazy>> *properties __attribute__((swift_name("properties")));
+@end
+
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
 @protocol SharedKotlinx_serialization_coreCompositeEncoder
 @required
@@ -869,6 +917,68 @@ __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 @property (readonly) SharedKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kodein_diDIKey")))
+@interface SharedKodein_diDIKey<__contravariant C, __contravariant A, __covariant T> : SharedBase
+- (instancetype)initWithContextType:(id<SharedKaveritTypeToken>)contextType argType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("init(contextType:argType:type:tag:)"))) __attribute__((objc_designated_initializer));
+- (SharedKodein_diDIKey<C, A, T> *)doCopyContextType:(id<SharedKaveritTypeToken>)contextType argType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("doCopy(contextType:argType:type:tag:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<SharedKaveritTypeToken> argType __attribute__((swift_name("argType")));
+@property (readonly) NSString *bindDescription __attribute__((swift_name("bindDescription")));
+@property (readonly) NSString *bindFullDescription __attribute__((swift_name("bindFullDescription")));
+@property (readonly) id<SharedKaveritTypeToken> contextType __attribute__((swift_name("contextType")));
+@property (readonly) NSString *description_ __attribute__((swift_name("description_")));
+@property (readonly) NSString *fullDescription __attribute__((swift_name("fullDescription")));
+@property (readonly) NSString *internalDescription __attribute__((swift_name("internalDescription")));
+@property (readonly) id _Nullable tag __attribute__((swift_name("tag")));
+@property (readonly) id<SharedKaveritTypeToken> type __attribute__((swift_name("type")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface SharedKotlinUnit : SharedBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) SharedKotlinUnit *shared __attribute__((swift_name("shared")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("Kodein_diDITree")))
+@protocol SharedKodein_diDITree
+@required
+- (NSArray<SharedKotlinTriple<SharedKodein_diDIKey<id, id, id> *, SharedKodein_diDIDefinition<id, id, id> *, id<SharedKodein_diContextTranslator>> *> *)findKey:(SharedKodein_diDIKey<id, id, id> *)key overrideLevel:(int32_t)overrideLevel all:(BOOL)all __attribute__((swift_name("find(key:overrideLevel:all:)")));
+- (NSArray<SharedKotlinTriple<SharedKodein_diDIKey<id, id, id> *, NSArray<SharedKodein_diDIDefinition<id, id, id> *> *, id<SharedKodein_diContextTranslator>> *> *)findSearch:(SharedKodein_diSearchSpecs *)search __attribute__((swift_name("find(search:)")));
+- (SharedKotlinTriple<SharedKodein_diDIKey<id, id, id> *, NSArray<SharedKodein_diDIDefinition<id, id, id> *> *, id<SharedKodein_diContextTranslator>> * _Nullable)getKey_:(SharedKodein_diDIKey<id, id, id> *)key __attribute__((swift_name("get(key_:)")));
+@property (readonly) NSDictionary<SharedKodein_diDIKey<id, id, id> *, NSArray<SharedKodein_diDIDefinition<id, id, id> *> *> *bindings __attribute__((swift_name("bindings")));
+@property (readonly) NSArray<id<SharedKodein_diExternalSource>> *externalSources __attribute__((swift_name("externalSources")));
+@property (readonly) NSArray<id<SharedKodein_diContextTranslator>> *registeredTranslators __attribute__((swift_name("registeredTranslators")));
+@end
+
+__attribute__((swift_name("KaveritTypeToken")))
+@protocol SharedKaveritTypeToken
+@required
+- (SharedKotlinArray<id<SharedKaveritTypeToken>> *)getGenericParameters __attribute__((swift_name("getGenericParameters()")));
+- (id<SharedKaveritTypeToken>)getRaw __attribute__((swift_name("getRaw()")));
+- (NSArray<id<SharedKaveritTypeToken>> *)getSuper __attribute__((swift_name("getSuper()")));
+- (BOOL)isAssignableFromTypeToken:(id<SharedKaveritTypeToken>)typeToken __attribute__((swift_name("isAssignableFrom(typeToken:)")));
+- (BOOL)isGeneric __attribute__((swift_name("isGeneric()")));
+- (BOOL)isWildcard __attribute__((swift_name("isWildcard()")));
+- (NSString *)qualifiedDispString __attribute__((swift_name("qualifiedDispString()")));
+- (NSString *)qualifiedErasedDispString __attribute__((swift_name("qualifiedErasedDispString()")));
+- (NSString *)simpleDispString __attribute__((swift_name("simpleDispString()")));
+- (NSString *)simpleErasedDispString __attribute__((swift_name("simpleErasedDispString()")));
+@end
+
+__attribute__((swift_name("KotlinLazy")))
+@protocol SharedKotlinLazy
+@required
+- (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
+@property (readonly) id _Nullable value __attribute__((swift_name("value")));
+@end
+
 
 /**
  * @note annotations
@@ -916,6 +1026,173 @@ __attribute__((swift_name("KotlinKClass")))
 - (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
 @property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
+@end
+
+__attribute__((swift_name("Kodein_diDIDefining")))
+@interface SharedKodein_diDIDefining<C, A, T> : SharedBase
+- (instancetype)initWithBinding:(id<SharedKodein_diDIBinding>)binding fromModule:(NSString * _Nullable)fromModule __attribute__((swift_name("init(binding:fromModule:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) id<SharedKodein_diDIBinding> binding __attribute__((swift_name("binding")));
+@property (readonly) NSString * _Nullable fromModule __attribute__((swift_name("fromModule")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kodein_diDIDefinition")))
+@interface SharedKodein_diDIDefinition<C, A, T> : SharedKodein_diDIDefining<C, A, T>
+- (instancetype)initWithBinding:(id<SharedKodein_diDIBinding>)binding fromModule:(NSString * _Nullable)fromModule tree:(id<SharedKodein_diDITree>)tree __attribute__((swift_name("init(binding:fromModule:tree:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithBinding:(id<SharedKodein_diDIBinding>)binding fromModule:(NSString * _Nullable)fromModule __attribute__((swift_name("init(binding:fromModule:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (readonly) id<SharedKodein_diDITree> tree __attribute__((swift_name("tree")));
+@end
+
+__attribute__((swift_name("Kodein_diContextTranslator")))
+@protocol SharedKodein_diContextTranslator
+@required
+- (id _Nullable)translateDi:(id<SharedKodein_diDirectDI>)di ctx:(id)ctx __attribute__((swift_name("translate(di:ctx:)")));
+@property (readonly) id<SharedKaveritTypeToken> contextType __attribute__((swift_name("contextType")));
+@property (readonly) id<SharedKaveritTypeToken> scopeType __attribute__((swift_name("scopeType")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinTriple")))
+@interface SharedKotlinTriple<__covariant A, __covariant B, __covariant C> : SharedBase
+- (instancetype)initWithFirst:(A _Nullable)first second:(B _Nullable)second third:(C _Nullable)third __attribute__((swift_name("init(first:second:third:)"))) __attribute__((objc_designated_initializer));
+- (SharedKotlinTriple<A, B, C> *)doCopyFirst:(A _Nullable)first second:(B _Nullable)second third:(C _Nullable)third __attribute__((swift_name("doCopy(first:second:third:)")));
+- (BOOL)equalsOther:(id _Nullable)other __attribute__((swift_name("equals(other:)")));
+- (int32_t)hashCode __attribute__((swift_name("hashCode()")));
+- (NSString *)toString __attribute__((swift_name("toString()")));
+@property (readonly) A _Nullable first __attribute__((swift_name("first")));
+@property (readonly) B _Nullable second __attribute__((swift_name("second")));
+@property (readonly) C _Nullable third __attribute__((swift_name("third")));
+@end
+
+__attribute__((swift_name("Kodein_diSearchSpecs")))
+@interface SharedKodein_diSearchSpecs : SharedBase
+- (instancetype)initWithContextType:(id<SharedKaveritTypeToken> _Nullable)contextType argType:(id<SharedKaveritTypeToken> _Nullable)argType type:(id<SharedKaveritTypeToken> _Nullable)type tag:(id _Nullable)tag __attribute__((swift_name("init(contextType:argType:type:tag:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property id<SharedKaveritTypeToken> _Nullable argType __attribute__((swift_name("argType")));
+@property id<SharedKaveritTypeToken> _Nullable contextType __attribute__((swift_name("contextType")));
+@property id _Nullable tag __attribute__((swift_name("tag")));
+@property id<SharedKaveritTypeToken> _Nullable type __attribute__((swift_name("type")));
+@end
+
+__attribute__((swift_name("Kodein_diExternalSource")))
+@protocol SharedKodein_diExternalSource
+@required
+- (id (^ _Nullable)(id _Nullable))getFactoryDi:(id<SharedKodein_diBindingDI>)di key:(SharedKodein_diDIKey<id, id, id> *)key __attribute__((swift_name("getFactory(di:key:)")));
+@end
+
+__attribute__((swift_name("Kodein_diBinding")))
+@protocol SharedKodein_diBinding
+@required
+- (id (^)(id _Nullable))getFactoryKey:(SharedKodein_diDIKey<id, id, id> *)key di:(id<SharedKodein_diBindingDI>)di __attribute__((swift_name("getFactory(key:di:)")));
+@end
+
+__attribute__((swift_name("Kodein_diDIBinding")))
+@protocol SharedKodein_diDIBinding <SharedKodein_diBinding>
+@required
+- (NSString *)factoryFullName __attribute__((swift_name("factoryFullName()")));
+- (NSString *)factoryName __attribute__((swift_name("factoryName()")));
+@property (readonly) id<SharedKaveritTypeToken> argType __attribute__((swift_name("argType")));
+@property (readonly) id<SharedKaveritTypeToken> contextType __attribute__((swift_name("contextType")));
+@property (readonly) id<SharedKodein_diDIBindingCopier> _Nullable copier __attribute__((swift_name("copier")));
+@property (readonly) id<SharedKaveritTypeToken> createdType __attribute__((swift_name("createdType")));
+@property (readonly) NSString *description_ __attribute__((swift_name("description_")));
+@property (readonly) NSString *fullDescription __attribute__((swift_name("fullDescription")));
+@property (readonly) id<SharedKodein_diScope> _Nullable scope __attribute__((swift_name("scope")));
+@property (readonly) BOOL supportSubTypes __attribute__((swift_name("supportSubTypes")));
+@end
+
+__attribute__((swift_name("Kodein_diDirectDIAware")))
+@protocol SharedKodein_diDirectDIAware
+@required
+@property (readonly) id<SharedKodein_diDirectDI> directDI __attribute__((swift_name("directDI")));
+@end
+
+__attribute__((swift_name("Kodein_diDirectDIBase")))
+@protocol SharedKodein_diDirectDIBase <SharedKodein_diDirectDIAware>
+@required
+- (id (^)(id _Nullable))FactoryArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("Factory(argType:type:tag:)")));
+- (id (^ _Nullable)(id _Nullable))FactoryOrNullArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("FactoryOrNull(argType:type:tag:)")));
+- (id)InstanceType:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("Instance(type:tag:)")));
+- (id)InstanceArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag arg:(id _Nullable)arg __attribute__((swift_name("Instance(argType:type:tag:arg:)")));
+- (id _Nullable)InstanceOrNullType:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("InstanceOrNull(type:tag:)")));
+- (id _Nullable)InstanceOrNullArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag arg:(id _Nullable)arg __attribute__((swift_name("InstanceOrNull(argType:type:tag:arg:)")));
+- (id<SharedKodein_diDirectDI>)OnContext:(id<SharedKodein_diDIContext>)context __attribute__((swift_name("On(context:)")));
+- (id (^)(void))ProviderType:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("Provider(type:tag:)")));
+- (id (^)(void))ProviderArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag arg:(id _Nullable (^)(void))arg __attribute__((swift_name("Provider(argType:type:tag:arg:)")));
+- (id (^ _Nullable)(void))ProviderOrNullType:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag __attribute__((swift_name("ProviderOrNull(type:tag:)")));
+- (id (^ _Nullable)(void))ProviderOrNullArgType:(id<SharedKaveritTypeToken>)argType type:(id<SharedKaveritTypeToken>)type tag:(id _Nullable)tag arg:(id _Nullable (^)(void))arg __attribute__((swift_name("ProviderOrNull(argType:type:tag:arg:)")));
+@property (readonly) id<SharedKodein_diDIContainer> container __attribute__((swift_name("container")));
+@property (readonly) id<SharedKodein_diDI> di __attribute__((swift_name("di")));
+@property (readonly) id<SharedKodein_diDI> lazy __attribute__((swift_name("lazy")));
+@end
+
+__attribute__((swift_name("Kodein_diDirectDI")))
+@protocol SharedKodein_diDirectDI <SharedKodein_diDirectDIBase>
+@required
+@end
+
+__attribute__((swift_name("Kodein_diWithContext")))
+@protocol SharedKodein_diWithContext
+@required
+@property (readonly) id context __attribute__((swift_name("context")));
+@end
+
+__attribute__((swift_name("Kodein_diBindingDI")))
+@protocol SharedKodein_diBindingDI <SharedKodein_diDirectDI, SharedKodein_diWithContext>
+@required
+- (id<SharedKodein_diBindingDI>)onErasedContext __attribute__((swift_name("onErasedContext()")));
+- (id (^)(id _Nullable))overriddenFactory __attribute__((swift_name("overriddenFactory()")));
+- (id (^ _Nullable)(id _Nullable))overriddenFactoryOrNull __attribute__((swift_name("overriddenFactoryOrNull()")));
+@end
+
+__attribute__((swift_name("Kodein_diDIBindingCopier")))
+@protocol SharedKodein_diDIBindingCopier
+@required
+- (id<SharedKodein_diDIBinding>)doCopyBuilder:(id<SharedKodein_diDIContainerBuilder>)builder __attribute__((swift_name("doCopy(builder:)")));
+@end
+
+__attribute__((swift_name("Kodein_diScope")))
+@protocol SharedKodein_diScope
+@required
+- (SharedKodein_diScopeRegistry *)getRegistryContext:(id _Nullable)context __attribute__((swift_name("getRegistry(context:)")));
+@end
+
+__attribute__((swift_name("Kodein_diDIContainerBuilder")))
+@protocol SharedKodein_diDIContainerBuilder
+@required
+- (void)bindKey:(SharedKodein_diDIKey<id, id, id> *)key binding:(id<SharedKodein_diDIBinding>)binding fromModule:(NSString * _Nullable)fromModule overrides:(SharedBoolean * _Nullable)overrides __attribute__((swift_name("bind(key:binding:fromModule:overrides:)")));
+- (void)extendContainer:(id<SharedKodein_diDIContainer>)container allowOverride:(BOOL)allowOverride copy:(NSSet<SharedKodein_diDIKey<id, id, id> *> *)copy __attribute__((swift_name("extend(container:allowOverride:copy:)")));
+- (void)onReadyCb:(void (^)(id<SharedKodein_diDirectDI>))cb __attribute__((swift_name("onReady(cb:)")));
+- (void)registerContextTranslatorTranslator:(id<SharedKodein_diContextTranslator>)translator __attribute__((swift_name("registerContextTranslator(translator:)")));
+- (id<SharedKodein_diDIContainerBuilder>)subBuilderAllowOverride:(BOOL)allowOverride silentOverride:(BOOL)silentOverride __attribute__((swift_name("subBuilder(allowOverride:silentOverride:)")));
+@end
+
+__attribute__((swift_name("Kodein_diScopeCloseable")))
+@protocol SharedKodein_diScopeCloseable
+@required
+- (void)close __attribute__((swift_name("close()")));
+@end
+
+__attribute__((swift_name("Kodein_diScopeRegistry")))
+@interface SharedKodein_diScopeRegistry : SharedBase <SharedKodein_diScopeCloseable>
+- (void)clear __attribute__((swift_name("clear()")));
+- (void)close __attribute__((swift_name("close()")));
+- (id)getOrCreateKey:(id)key sync:(BOOL)sync creator:(SharedKodein_diReference<id> *(^)(void))creator __attribute__((swift_name("getOrCreate(key:sync:creator:)")));
+- (id _Nullable (^ _Nullable)(void))getOrNullKey:(id)key __attribute__((swift_name("getOrNull(key:)")));
+- (void)removeKey:(id)key __attribute__((swift_name("remove(key:)")));
+- (id)values __attribute__((swift_name("values()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Kodein_diReference")))
+@interface SharedKodein_diReference<__covariant T> : SharedBase
+- (instancetype)initWithCurrent:(T)current next:(T _Nullable (^)(void))next __attribute__((swift_name("init(current:next:)"))) __attribute__((objc_designated_initializer));
+- (SharedKodein_diReference<T> *)doCopyCurrent:(T)current next:(T _Nullable (^)(void))next __attribute__((swift_name("doCopy(current:next:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) T current __attribute__((swift_name("current")));
+@property (readonly) T _Nullable (^next)(void) __attribute__((swift_name("next")));
 @end
 
 #pragma pop_macro("_Nullable_result")
