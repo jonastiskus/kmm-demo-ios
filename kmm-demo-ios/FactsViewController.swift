@@ -23,6 +23,10 @@ class FactsViewController: UIViewController, UITableViewDataSource {
         setupObservers()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        viewModel.clear()
+    }
+    
     private func setupObservers() {
         viewModel.state.watch { state in
             self.updateTable(facts: state?.facts ?? [])
